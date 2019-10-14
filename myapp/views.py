@@ -2,8 +2,12 @@ import pickle
 import sqlite3
 
 from django.shortcuts import render, redirect
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 import json
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from myapp import stock_api
 from myapp.models import Stock, FavoriteStocks ,Notifications
 from django.http import JsonResponse
@@ -119,13 +123,13 @@ def getNotifications(request,username):
 			cur.execute('INSERT INTO myapp_notifications (stock, type) values (?, ?)', (n.stock, n.type))
 			conn.commit()
             #n.save(force_insert=False,force_update=False,using=None,update_fields=None)
-			data.append({"type": n.type, "stock": n.stock})
+			data.append({"stock":n.stock,"type": n.type})
 
 		if stock_info['change'] < 0:
 
 		    print(str(stock['stock']) +"down")
 		    n=Notifications(str(stock['stock']),"down")
-		    data.append({"type": n.type,"stock":n.stock})
+		    data.append({"stock":n.stock,"type": n.type})
             # pick = pickle.dump(n)
 
 
@@ -135,3 +139,12 @@ def getNotifications(request,username):
 	print(json_data)
 	return JsonResponse( data,safe=False)
 	#[{"username": "moham", "stock": "goog"}, {"username": "moham", "stock": "AMZN"}]
+
+@api_view(["POST"])
+def CalcTest(x1):
+    try:
+        x=json.loads(x1.body)
+        y=str(x*100)
+        return JsonResponse("Result:"+y,safe=False)
+    except ValueError as e:
+        return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
