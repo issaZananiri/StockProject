@@ -1,7 +1,6 @@
 frontend/dist
 frontend/node_modules
 /.idea/
-venv
 .idea
 **.iml
 .idea/**.xml
