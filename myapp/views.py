@@ -1,9 +1,26 @@
+import pickle
+import sqlite3
+
 from django.shortcuts import render, redirect
+from rest_framework import viewsets, status
+import json
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from myapp import stock_api
-from myapp.models import Stock
+from myapp.models import Stock, FavoriteStocks ,Notifications
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
+from django.utils import timezone
+#from myapp.serializers import FavoriteStocksSerializerpi
+from myapp.serializers import FavoriteStocksSerializer
+
+
+class FavoriteStocksViewSet(viewsets.ModelViewSet):
+    queryset = FavoriteStocks.objects.all()
+    serializer_class = FavoriteStocksSerializer
 
 
 # View for the home page - a list of 20 of the most active stocks
@@ -17,6 +34,7 @@ def index(request):
 # symbol is the requested stock's symbol ('AAPL' for Apple)
 def single_stock(request, symbol):
 	data = stock_api.get_stock_info(symbol)
+	print(data[ 'change'])
 	return render(request, 'single_stock.html', {'page_title': 'Stock Page - %s' % symbol, 'data': data})
 
 
@@ -49,3 +67,84 @@ def logout_view(request):
 def single_stock_historic(request, symbol):
 	data = stock_api.get_stock_historic_prices(symbol, time_range='1m')
 	return JsonResponse({'data': data})
+
+
+def get_favorite_stocks(request ,username):
+	stocks = FavoriteStocks.objects.filter(username=username).values('username','stock')
+	print((stocks)[0]['stock'])
+    # for i in range(len(list(stocks))):
+    #     string += list(stocks)[i]['stock']
+	return JsonResponse( list(stocks),safe=False)
+
+def get_string_stocks(username):
+    stocks_str =""
+    stocks = FavoriteStocks.objects.filter(username=username).values('username', 'stock')
+    for i in range(len(list(stocks))):
+        stocks_str += list(stocks)[i]['stock']
+        if i != len(list(stocks)) - 1:
+            stocks_str += ","
+    return stocks_str
+
+
+def multible_stock(request, username):
+
+	data = stock_api.get_multyble_stocks(get_string_stocks(username))
+	return JsonResponse({'data':data})
+
+def getNotifications(request,username):
+	stocks = FavoriteStocks.objects.filter(username=username).values('username', 'stock')
+
+
+    #Notifications.objects.create(stock="goog", type="down")
+	# notificatins_list=[]
+	# data_notification = {}
+	data = []
+
+
+
+
+    # json_data = json.dumps(data_notification)
+
+
+
+	for stock in list(stocks):
+
+		stock_info = stock_api.get_stock_info(stock['stock'])
+		if stock_info[ 'change'] > 0:
+			n = Notifications(str(stock['stock']), "up")
+
+			# new1=Notifications(stock="asd",type="up")
+			# new1.save(force_insert=False,force_update=False,using=None,update_fields=None)
+
+			print(str(stock['stock']) +"up")
+
+			conn = sqlite3.connect('db.sqlite3')
+			cur = conn.cursor()
+			cur.execute('INSERT INTO myapp_notifications (stock, type) values (?, ?)', (n.stock, n.type))
+			conn.commit()
+            #n.save(force_insert=False,force_update=False,using=None,update_fields=None)
+			data.append({"stock":n.stock,"type": n.type})
+
+		if stock_info['change'] < 0:
+
+		    print(str(stock['stock']) +"down")
+		    n=Notifications(str(stock['stock']),"down")
+		    data.append({"stock":n.stock,"type": n.type})
+            # pick = pickle.dump(n)
+
+
+
+	print(data)
+	json_data=json.dumps(data)
+	print(json_data)
+	return JsonResponse( data,safe=False)
+	#[{"username": "moham", "stock": "goog"}, {"username": "moham", "stock": "AMZN"}]
+
+@api_view(["POST"])
+def CalcTest(x1):
+    try:
+        x=json.loads(x1.body)
+        y=str(x*100)
+        return JsonResponse("Result:"+y,safe=False)
+    except ValueError as e:
+        return Response(e.args[0],status.HTTP_400_BAD_REQUEST)

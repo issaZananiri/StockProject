@@ -1,7 +1,9 @@
 import requests
 
 # Sandbox API - FOR TESTING
+# BASE_URL = '' ++ https://sandbox.iexapis.com/v1/stock/market/batch?types=chart,splits,news&symbols=aapl,goog,fb&range=5y
 BASE_URL = 'https://sandbox.iexapis.com'
+
 PUBLIC_TOKEN = 'Tpk_c818732500c24764801eb121fa658bb6'
 
 # Real API - FOR PRODUCTION
@@ -47,3 +49,10 @@ def get_stock_info(symbol):
 
 def get_stock_historic_prices(symbol, time_range='1m'):
 	return _request_data('/stable/stock/{symbol}/chart/{time_range}'.format(symbol=symbol, time_range=time_range))
+
+def get_multyble_stocks(stocks):
+	# 'symbol,companyName,marketcap,totalCash,primaryExchange,latestPrice,latestSource,change,changePercent'
+	return _request_data('/v1/stock/market/quote/batch?types=chart,splits,news&symbols={stocks}'.format(stocks=stocks),
+						 filter='symbol,companyName,latestVolume,change,changePercent,primaryExchange,marketCap,latestPrice,calculationPrice',
+
+						 additional_parameters={'displayPercent': 'true'})
