@@ -1,17 +1,20 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <h2>Test App: {{c1.type}}</h2>
-  <button (click)="click1()" >click me</button>
-  <button (click)="click2()" >click me</button>
- 
- 
-</div>
-      
-     <h2>list of notifications:</h2>
-      <ul>
-        <li *ngFor="let not of notifications">
-             <h2>{{not.stock}} is :{{not.type}}</h2>
-        </li>
-      </ul>
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+
+
+
+</head>
+<body>
+  <app-test></app-test>
+
+  <ag-grid-angular style="width: 802px; height: 500px; border-radius: 29px;"
+                   class="ag-theme-balham"
+                   [rowData]="rowData"
+                   [columnDefs]="columnDefs">
+  </ag-grid-angular>
+  </body>
+<footer></footer>
+</html>

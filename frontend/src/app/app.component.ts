@@ -1,49 +1,26 @@
-
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
- 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'djint';
-  notifications=[{notifications:'test'}]
-  constructor(private _http:HttpClient) {
-    this.getNotifications()
-  }
-  getNotifications = () =>{
-    this.getNotificationsapi().subscribe(data =>{this.notifications=data})
-    
-  }
- 
-  getNotificationsapi(){
-    return this._http
-      .get<any>("./notifications/moham")
-  }
-  c1:Cust = new Cust();
-  click1(){
-    this.getBooks().subscribe(b => this.c1.type = b.toString())
-  }
-  click2(){
-    this.getAllBooks().subscribe(b => this.c1 = b)
-  }
- 
-  getAllBooks()
-  {
-    return this._http
-      .get<Cust>("./notifications/moham") // GET request  
-  }
-  getBooks()
-  {
-    return this._http
-      .post("./apitest/","5") // POST request with argument
-  }
-}
- 
-export class Cust{
-  stock:string;
-  type:string;
-  
+  title = 'app';
+
+  columnDefs = [
+    { headerName: 'Num', field: 'Num', sortable: true, filter: true },
+    { headerName: 'Symbol', field: 'Symbol', sortable: true, filter: true },
+
+    { headerName: 'Price', field: 'Price', sortable: true, filter: true },
+    {headerName: 'Change', field: 'Change', sortable: true, filter: true }
+
+  ];
+
+  rowData = [
+    { Num: '1', Symbol: 'ap', Price: 35000,Change: 5 },
+    { Num: '2', Symbol: 'io', Price: 3500,Change: 1 },
+    { Num: '3', Symbol: 'AA', Price: 350,Change: 2 }
+
+  ];
 }
