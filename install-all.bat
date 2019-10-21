@@ -7,4 +7,5 @@ pip3 install requests
 pip3 install djangorestframework
 pip3 install django
 pip3 install whitenoise
+cd..
 
