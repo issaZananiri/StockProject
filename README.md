@@ -6,4 +6,12 @@ To simplify things when taking a fresh copy from master branch do the following 
 ## install-all.bat
 ## run.bat
 
+## Under ``frontend`` folder Install all dependencies 
+`npm i`
+
+## Build Angular 8 project and keep watching changes, under ``frontend`` folder. The build artifacts will be automatically transferred to django `static/` directory.
+
+`ng build --watch true --prod false --output-path ../myapp/static/` 
+
+
 now all set and the service is up and running

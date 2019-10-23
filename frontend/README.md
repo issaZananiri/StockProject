@@ -2,17 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
+## Install all dependacies 
+npm i
+
+## Build and keep watching changes
+
+Run `ng build --watch true --prod false --output-path ../myapp/static/` to build the project. The build artifacts will be stored in the django `static/` directory. Use the `--prod` flag for a production build.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Client is integrated with django and should be run on the same server host localhost:8000
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build --watch true --prod false --output-path ../myapp/static/` to build the project. The build artifacts will be stored in the django `static/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
