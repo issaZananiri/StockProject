@@ -33,7 +33,7 @@ WAIT_TIME_SECONDS = 1
 def mytask(param1, param2):
     print(time.ctime(), param1, param2)
 
-
-t = KillableThread(sleep_interval=WAIT_TIME_SECONDS, task=mytask, args=[1, 2])
-t.start()
+#
+# t = KillableThread(sleep_interval=WAIT_TIME_SECONDS, task=mytask, args=[1, 2])
+# t.start()
 # t.kill()

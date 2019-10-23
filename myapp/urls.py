@@ -27,6 +27,8 @@ urlpatterns = [
 	path('accounts/register/', views.register, name='register'),
     path('multyStocks/<str:username>/', views.multible_stock, name='multible_stock'),
 	path('notifications/<str:username>/', views.getNotifications, name='getNotifications'),
-    url(r'^', include(router.urls)),
+	path('notificationstype/<str:username>/', views.getNotificationsApi, name='getNotifications'),
+	url(r'^', include(router.urls)),
 	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
 ]
