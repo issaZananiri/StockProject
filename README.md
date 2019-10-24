@@ -15,7 +15,7 @@ To simplify things when taking a fresh copy from master branch do the following 
 `npm i`
 
 ## Build Angular 8 project and keep watching changes, under ``frontend`` folder. The build artifacts will be automatically transferred to django `static/` directory.
-`npm i build`
+`npm run build`
 <br>OR<br>
 `ng build --watch true --prod false --output-path ../myapp/static/` 
 
