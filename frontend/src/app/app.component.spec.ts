@@ -29,8 +29,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('my-app app is running!');
   });
 });
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
