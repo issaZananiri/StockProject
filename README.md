@@ -1,3 +1,6 @@
+## Clone
+``git clone https://github.com/mazinsafadi/StockProject.git``
+
 # Setting up Python Django and Angular 8 project
 
 To simplify things when taking a fresh copy from master branch do the following from the project root folder
