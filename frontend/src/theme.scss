@@ -1,0 +1,78 @@
+    @import '~@angular/material/theming';
+    @include mat-core();
+    // Typography
+    $custom-typography: mat-typography-config( $font-family: Raleway, $headline: mat-typography-level(24px, 48px, 400), $body-1: mat-typography-level(16px, 24px, 400));
+    @include angular-material-typography($custom-typography);
+    @mixin global-theme($theme) {
+        & {
+            $background: map-get($theme, background);
+            $foreground: map-get($theme, foreground);
+            background-color: mat-color($background, background);
+            color: mat-color($foreground, text);
+        }
+    }
+    
+    // Default colors
+    $my-app-primary: mat-palette($mat-brown, 50, 100, 500);
+    $my-app-accent: mat-palette($mat-pink, 50, 100, 800);
+    $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+    @include angular-material-theme($my-app-theme);
+    // Dark theme
+    $dark-primary: mat-palette($mat-blue-grey, A700);
+    $dark-accent: mat-palette($mat-green, 100, 900);
+    $dark-warn: mat-palette($mat-orange);
+    $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+    .dark-theme {
+        @include angular-material-theme($dark-theme);
+        @include global-theme($dark-theme);
+        body {
+            background-color: blueviolet;
+        }
+    }
+    
+    // Light theme
+    $light-primary: mat-palette($mat-blue, 50, 100, 200);
+    $light-accent: mat-palette($mat-purple, 50, 100, 200);
+    $light-warn: mat-palette($mat-deep-orange, 200);
+    $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+    .light-theme {
+        @include angular-material-theme($light-theme);
+        @include global-theme($light-theme);
+        body {
+            background-color: blanchedalmond;
+        }
+    }
+    /**
+@import "~@angular/material/theming";
+@import "node_modules/bootstrap/scss/bootstrap";
+@include mat-core();
+//Typography
+$custom-typography: mat-typography-config( $font-family: Raleway, $headline: mat-typography-level(24px, 48px, 400), $body-1: mat-typography-level(16px, 24px, 400));
+@include angular-material-typography($custom-typography);
+// Light theme
+$light-primary: mat-palette($mat-pink, 200, 500, 300);
+$light-accent: mat-palette($mat-pink, 200);
+$light-warn: mat-palette($mat-yellow, 200);
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+.light-theme {
+    @include angular-material-theme($light-theme)
+}
+
+// Dark theme
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-red);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+.alternative {
+    @include angular-material-theme($dark-theme);
+    $theme-colors: ( "primary": #d96200, "danger": red, "dark": darkgray);
+    $body-bg: black;
+}
+
+
+
+.alternative {
+    $theme-colors: ( "primary": #d96200, "danger": red, "dark": darkgray);
+    $body-bg: black;
+}
+**/
