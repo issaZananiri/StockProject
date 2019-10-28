@@ -4,11 +4,14 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
+import {StocksgridComponent} from './stocksgrid/stocksgrid.component';
 
 const routes: Routes = [
-  { path:'#/index', component: AppComponent },
-  { path: '#/login', component: LoginComponent },
+  { path: 'index', component: AppComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+    { path: 'favStocks', component: StocksgridComponent },
+   { path: 'stocks', component: StocksgridComponent },
 
 ];
 
@@ -19,4 +22,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents =[LoginComponent, RegisterComponent, NavComponent]
+export const routingComponents = [LoginComponent, RegisterComponent, NavComponent, StocksgridComponent]

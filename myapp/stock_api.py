@@ -56,3 +56,9 @@ def get_multyble_stocks(stocks):
 						 filter='symbol,companyName,latestVolume,change,changePercent,primaryExchange,marketCap,latestPrice,calculationPrice',
 
 						 additional_parameters={'displayPercent': 'true'})
+def get_stocks_for_favorite(stocks):
+	# 'symbol,companyName,marketcap,totalCash,primaryExchange,latestPrice,latestSource,change,changePercent'
+	return _request_data('/v1/stock/market/quote/batch?types=chart,splits,news&symbols={stocks}'.format(stocks=stocks),
+						 filter='symbol,change,latestPrice',
+
+						 additional_parameters={'displayPercent': 'true'})

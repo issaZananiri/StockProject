@@ -7,3 +7,5 @@ frontend/node_modules
 .idea/**.xml
 db.sqlite3
 venv
+package-lock.json
+myapp/__pycache__

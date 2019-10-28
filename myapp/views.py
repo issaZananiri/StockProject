@@ -9,12 +9,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from myapp import stock_api
-from myapp.models import Stock, FavoriteStocks ,Notifications
+from myapp.models import Stock, FavoriteStocks, Notifications, NotificationType
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.utils import timezone
 #from myapp.serializers import FavoriteStocksSerializerpi
+from myapp.notifications.notifications_api import NotificationsApi
+from myapp.scheduler.scheduler import KillableThread
+
 from myapp.serializers import FavoriteStocksSerializer
 
 
@@ -75,6 +78,12 @@ def get_favorite_stocks(request ,username):
     # for i in range(len(list(stocks))):
     #     string += list(stocks)[i]['stock']
 	return JsonResponse( list(stocks),safe=False)
+
+def getFavoriteStocksInfo(request,username):
+	data = stock_api.get_stocks_for_favorite(get_string_stocks(username))
+	return JsonResponse( data,safe=False)
+
+
 
 def get_string_stocks(username):
     stocks_str =""
@@ -140,6 +149,10 @@ def getNotifications(request,username):
 	return JsonResponse( data,safe=False)
 	#[{"username": "moham", "stock": "goog"}, {"username": "moham", "stock": "AMZN"}]
 
+def getNotificationsApi(request,username):
+	notifications = NotificationType.objects.filter(username=username).values('username', 'stock' ,'notificationType')
+	return JsonResponse(list(notifications), safe=False)
+
 @api_view(["POST"])
 def CalcTest(x1):
     try:
@@ -148,3 +161,4 @@ def CalcTest(x1):
         return JsonResponse("Result:"+y,safe=False)
     except ValueError as e:
         return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
+

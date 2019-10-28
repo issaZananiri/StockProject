@@ -15,10 +15,11 @@ router.register(r'favoritestocks',views.FavoriteStocksViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 
-
-
 urlpatterns = [
 	path('', views.index, name='index'),
+	url(r'^login/$', views.index, name='ui'),
+	url(r'^favStocks/$', views.index, name='ui'),
+	path('favStocksInfo/<str:username>/', views.getFavoriteStocksInfo, name='getFavoriteStocksInfo'),
 	path('favStock/<str:username>/', views.get_favorite_stocks, name='get_favorite_stocks'),
 	path('stock/<str:symbol>/', views.single_stock, name='single_stock'),
 	path('historic/<str:symbol>/', views.single_stock_historic, name='single_stock_historic'),
@@ -27,6 +28,7 @@ urlpatterns = [
 	path('accounts/register/', views.register, name='register'),
     path('multyStocks/<str:username>/', views.multible_stock, name='multible_stock'),
 	path('notifications/<str:username>/', views.getNotifications, name='getNotifications'),
-    url(r'^', include(router.urls)),
+	path('notificationstype/<str:username>/', views.getNotificationsApi, name='getNotifications'),
+	url(r'^', include(router.urls)),
 	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

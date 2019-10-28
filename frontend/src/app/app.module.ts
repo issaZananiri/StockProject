@@ -12,12 +12,15 @@ import { MaterialsModule } from './materials/materials.module';
 import { AgGridModule } from 'ag-grid-angular';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { OverlayModule} from '@angular/cdk/overlay';
+import {LoginComponent} from "./user/login/login.component";
+import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents, 
+    routingComponents,
+    StocksgridComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,10 +30,10 @@ import { OverlayModule} from '@angular/cdk/overlay';
     AppRoutingModule,
     RouterModule,
     MaterialsModule,
-    AgGridModule.withComponents([]), 
+    AgGridModule.withComponents([]),
     OverlayModule,
     FlexLayoutModule,
-    
+
   ],
   providers: [
     UserService,
@@ -38,6 +41,6 @@ import { OverlayModule} from '@angular/cdk/overlay';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 }
