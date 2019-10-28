@@ -7,18 +7,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./stocksgrid.component.scss']
 })
 export class StocksgridComponent implements OnInit {
-  private _http;
-    newData =[{stock: 'news', username: 'soos'}];
+  
+    newData =[{symbol: 'test', change: 1.3, latestPrice:123}];
 
   columnDefs = [
-    { headerName: 'stock', field: 'stock', sortable: true, filter: true },
-    { headerName: 'username', field: 'username', sortable: true, filter: true },
-    // { headerName: 'Price', field: 'Price', sortable: true, filter: true },
-    // { headerName: 'Change', field: 'Change', sortable: true, filter: true }
+    { headerName: 'stock', field: 'symbol', sortable: true, filter: true },
+    //{ headerName: 'username', field: 'username', sortable: true, filter: true },
+    { headerName: 'Price', field: 'latestPrice', sortable: true, filter: true },
+    { headerName: 'Change', field: 'change', sortable: true, filter: true }
   ];
 
-  constructor(http: HttpClient) {
-    this._http = http;
+  constructor(private _http: HttpClient) {
+    this.getNotifications()
   }
 
   ngOnInit() {
@@ -35,6 +35,6 @@ export class StocksgridComponent implements OnInit {
   }
 
   getNotificationsapi() {
-    return this._http.get('./favStock/moham');
+    return this._http.get<any>('./favStocksInfo/moham');
   }
 }

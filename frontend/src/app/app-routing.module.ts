@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: 'index', component: AppComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-   { path: 'favStocks', component: StocksgridComponent },
-  { path: 'stocks', component: StocksgridComponent },
+    { path: 'favStocks', component: StocksgridComponent },
+   { path: 'stocks', component: StocksgridComponent },
 
 ];
 
