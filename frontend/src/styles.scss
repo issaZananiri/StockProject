@@ -1,5 +1,6 @@
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "theme.scss";
 .grid1 {
     margin-top: 20px;
     margin-left: 300px;
@@ -20,7 +21,7 @@
 }
 
 body {
-    background-color: #f8f9fa;
+    background-color: #ccc9be;
     height: 100%;
 }
 

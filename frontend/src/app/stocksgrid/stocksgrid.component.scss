@@ -1,0 +1,45 @@
+.ag-grid-angular {
+    margin-top: 100px;
+    margin-left: 450px;
+}
+
+.ag-theme-balham .ag-header {
+    background-color: #000000e8;
+    color: rgb(112, 149, 182);
+    font-weight: bolder;
+    font-size: 19px;
+    font-family: "Helvetica Neue", sans-serif;
+    border-bottom: 0px solid #BDC3C7;
+    margin-top: 30px;
+}
+
+.ag-center-cols-viewport {
+    height: calc(100% + 0px);
+    background-color: #b4c6d8;
+}
+
+.ag-root-wrapper {
+    border-radius: 29px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+html {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+body {
+    padding: 1rem;
+    overflow: auto;
+}

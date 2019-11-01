@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StocksgridComponent implements OnInit {
   
-    newData =[{symbol: 'test', change: 1.3, latestPrice:123}];
+  newData =[{symbol: 'test', change: 1.3, latestPrice:123}];
+  rowIndex = (params) => params.node.rowIndex + 1
 
   columnDefs = [
     { headerName: 'stock', field: 'symbol', sortable: true, filter: true },

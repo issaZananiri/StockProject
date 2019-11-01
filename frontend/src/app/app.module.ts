@@ -12,7 +12,6 @@ import { MaterialsModule } from './materials/materials.module';
 import { AgGridModule } from 'ag-grid-angular';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { OverlayModule} from '@angular/cdk/overlay';
-import {LoginComponent} from "./user/login/login.component";
 import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
 
 
@@ -20,7 +19,7 @@ import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
   declarations: [
     AppComponent,
     routingComponents,
-    StocksgridComponent,
+    StocksgridComponent, 
   ],
   imports: [
     BrowserModule,
@@ -30,10 +29,10 @@ import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
     AppRoutingModule,
     RouterModule,
     MaterialsModule,
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([]), 
     OverlayModule,
     FlexLayoutModule,
-
+    
   ],
   providers: [
     UserService,
@@ -41,6 +40,6 @@ import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
+export class AppModule { 
 
 }
