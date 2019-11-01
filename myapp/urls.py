@@ -20,6 +20,7 @@ urlpatterns = [
 	url(r'^login/$', views.index, name='ui'),
 	url(r'^favStocks/$', views.index, name='ui'),
 	path('favStocksInfo/<str:username>/', views.getFavoriteStocksInfo, name='getFavoriteStocksInfo'),
+	path('top20stocks/', views.getTop20Stocks, name='getTop20Stocks'),
 	path('favStock/<str:username>/', views.get_favorite_stocks, name='get_favorite_stocks'),
 	path('stock/<str:symbol>/', views.single_stock, name='single_stock'),
 	path('historic/<str:symbol>/', views.single_stock_historic, name='single_stock_historic'),

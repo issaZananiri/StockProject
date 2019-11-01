@@ -14,6 +14,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { OverlayModule} from '@angular/cdk/overlay';
 import {LoginComponent} from "./user/login/login.component";
 import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
+import { AllstocksComponent } from './allstocks/allstocks.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
     AppComponent,
     routingComponents,
     StocksgridComponent,
+    AllstocksComponent,
   ],
   imports: [
     BrowserModule,

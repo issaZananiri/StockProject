@@ -62,3 +62,8 @@ def get_stocks_for_favorite(stocks):
 						 filter='symbol,change,latestPrice',
 
 						 additional_parameters={'displayPercent': 'true'})
+def get_top_stocks_for_grid():
+	# 'symbol,companyName,marketcap,totalCash,primaryExchange,latestPrice,latestSource,change,changePercent'
+	return _request_data('/stable/stock/market/list/mostactive',
+						 filter='symbol,companyName,change,latestPrice',
+						 additional_parameters={'displayPercent': 'true', 'listLimit': '20'})

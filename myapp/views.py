@@ -94,7 +94,9 @@ def get_string_stocks(username):
             stocks_str += ","
     return stocks_str
 
-
+def getTop20Stocks(request):
+	data = stock_api.get_top_stocks_for_grid()
+	return JsonResponse(data,safe=False)
 def multible_stock(request, username):
 
 	data = stock_api.get_multyble_stocks(get_string_stocks(username))
@@ -161,4 +163,3 @@ def CalcTest(x1):
         return JsonResponse("Result:"+y,safe=False)
     except ValueError as e:
         return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
-
