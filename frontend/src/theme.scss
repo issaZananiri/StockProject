@@ -13,10 +13,10 @@
     }
     
     // Default colors
-    $my-app-primary: mat-palette($mat-brown, 50, 100, 500);
-    $my-app-accent: mat-palette($mat-pink, 50, 100, 800);
-    $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
-    @include angular-material-theme($my-app-theme);
+    $dafault-primary: mat-palette($mat-brown, 50, 100, 500);
+    $dafault-accent: mat-palette($mat-pink, 50, 100, 800);
+    $dafault-theme: mat-light-theme($dafault-primary, $dafault-accent);
+    @include angular-material-theme($dafault-theme);
     // Dark theme
     $dark-primary: mat-palette($mat-blue-grey, A700);
     $dark-accent: mat-palette($mat-green, 100, 900);
@@ -28,16 +28,25 @@
         body {
             background-color: blueviolet;
         }
+        .ag-theme-balham .ag-header {
+            background-color: #000000e8;
+            color: rgb(112, 149, 182);
+            font-weight: bolder;
+            font-size: 19px;
+            font-family: "Helvetica Neue", sans-serif;
+            border-bottom: 0px solid #BDC3C7;
+            margin-top: 30px;
+        }
     }
     
     // Light theme
-    $light-primary: mat-palette($mat-blue, 50, 100, 200);
-    $light-accent: mat-palette($mat-purple, 50, 100, 200);
-    $light-warn: mat-palette($mat-deep-orange, 200);
-    $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
-    .light-theme {
-        @include angular-material-theme($light-theme);
-        @include global-theme($light-theme);
+    $default-primary: mat-palette($mat-blue, 50, 100, 200);
+    $dafault-accent: mat-palette($mat-purple, 50, 100, 200);
+    $dafault-warn: mat-palette($mat-deep-orange, 200);
+    $dafault-theme: mat-light-theme($dafault-primary, $dafault-accent, $dafault-warn);
+    .dafault-theme {
+        @include angular-material-theme($dafault-theme);
+        @include global-theme($dafault-theme);
         body {
             background-color: blanchedalmond;
         }

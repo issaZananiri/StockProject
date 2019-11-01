@@ -1,51 +1,33 @@
-#se {
-    position: absolute;
-    margin-left: 1280px;
-    color: gray;
-}
-
-.btn {
-    margin-top: 2.7px;
-}
-
-.fill-remaining-space {
-    flex-direction: 1 1 auto;
-}
-
-#title {
+.companyName {
+    font-size: 150%;
     font-family: fantasy;
-    font-size: 27px;
-    font-weight: bolder;
-    color: rgb(10, 10, 10);
 }
 
-#title:hover {
-    color: purple;
+div {
+    overflow: inherit;
 }
 
-.theme {
-    margin-left: 900px;
-    font-size: 100px;
-    size: 25px;
+a {
+    text-decoration: none;
+    font-size: 90%;
+    white-space: normal;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    font-size: 90%;
+    min-width: min-content;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-sidenav-content {
+    font-size: 200%;
     text-align: center;
-}
-
-#try {
-    color: rgb(27, 27, 27);
-    font-size: 20;
-    font-family: serif;
-    font-weight: bold;
-    margin-right: 1px;
-}
-
-#try button:first-child {
-    margin-left: 30px;
-}
-
-#only {
-    margin-left: 1rem;
-}
-
-.con:hover {
-    color: rgb(148, 46, 148);
 }

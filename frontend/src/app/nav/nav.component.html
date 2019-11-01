@@ -1,38 +1,70 @@
-<div [class.alternative]="otherTheme">
-    <mat-toolbar color="primary">
-        <button mat-button id="title">
-           Rail's Stocks💰</button>
-        <!-- This fills the remaining space of the current row -->
-        <span class="fill-remaining-space"></span>
-        <div fxLayout="row" fxShow="false" fxShow.gt-sm id="try">
-            <button class="con" mat-button> Home</button>
-            <button class="con" mat-button>Exchange System</button>
-            <button class="con" mat-button>Contact</button>
-            <button class="con" mat-button>Register</button>
-            <button class="con" mat-button>Login</button>
+<div style="height: fit-content;">
+    <mat-toolbar color="primary" class="default-theme">
+        <div fxShow="true" fxHide.gt-sm="true">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                        <mat-icon>&#9776;</mat-icon>
+                      </button>
         </div>
+        <a mat-button class="companyName" routerLink="/">
+            <span>Rail's Stocks💰</span>
+        </a>
+        <span class="example-spacer"></span>
+        <div fxShow="true" fxHide.lt-md="true">
+            <a mat-button>Exchange System</a>
+            <a mat-button>Contact</a>
+            <a mat-button>Register</a>
+            <a mat-button>Login</a>
+            <a mat-raised-button (click)="changeTheme()">Switch</a>
 
-        <div class="theme">
-            <button mat-fab (click)="onSetTheme('dark-theme')" color="accent">Dark</button>
-            <button mat-fab id="only" (click)="onSetTheme('light-theme')" color="warn">Light</button>
         </div>
-
-        <form class="form-inline my-2 my-lg-0" id="se">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-        <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-        <mat-icon>menu</mat-icon>
-        </button>
     </mat-toolbar>
-    <mat-menu x-position="before" #menu="matMenu">
-        <button mat-menu-item>Home</button>
-        <button mat-menu-item>Exchange System</button>
-        <button mat-menu-item>Contact</button>
-        <button mat-menu-item>Register</button>
-        <button mat-menu-item>Login</button>
-        <!--<button mat-menu-item>Help</button>-->
-    </mat-menu>
+    <div fxFlexFill class="example-container">
+        <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true" style="height: fit-content;">
+            <div fxLayout="column">
+                <a mat-button>Exchange System</a>
+                <a mat-button>Contact</a>
+                <a mat-button>Register</a>
+                <a mat-button>Login</a>
+                <a mat-button (click)="changeTheme()">Switch</a>
 
+            </div>
+        </mat-sidenav>
+    </div>
 </div>
+
+
+
+
+
+<!--<mat-toolbar color="primary">
+    <button mat-button id="title"> Rail's Stocks💰</button>
+   This fills the remaining space of the current row
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm id="try">
+        <button class="con" mat-button> Home</button>
+        <button class="con" mat-button>Exchange System</button>
+        <button class="con" mat-button>Contact</button>
+        <button class="con" mat-button>Register</button>
+        <button class="con" mat-button>Login</button>
+    </div>
+
+    <div class="theme">
+        <button mat-fab (click)="onSetTheme('dark-theme')" color="warn">Dark</button>
+        <button mat-fab (click)="onSetTheme('light-theme')" color="accent">Light</button>
+    </div>
+
+    <form class="form-inline my-2 my-lg-0" id="se" fxHide="true" fxHide.gt-sm="false">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm="true">
+        <mat-icon>&#9776;</mat-icon>
+        </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item>Exchange System</button>
+    <button mat-menu-item>Contact</button>
+    <button mat-menu-item>Register</button>
+    <button mat-menu-item>Login</button>
+    <button mat-menu-item>Help</button>
+</mat-menu>-->
