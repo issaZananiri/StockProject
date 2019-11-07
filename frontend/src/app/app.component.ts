@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthGuardService }  from './auth-guard.service'
 
 
 
@@ -9,5 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  show = this.authGuardService.isLoggedIn;
 
+  constructor(
+    private authGuardService: AuthGuardService) { }
 }

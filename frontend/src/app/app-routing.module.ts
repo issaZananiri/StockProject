@@ -6,14 +6,15 @@ import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
 import {StocksgridComponent} from './stocksgrid/stocksgrid.component';
 import {AllstocksComponent} from './allstocks/allstocks.component';
+import { AuthGuardService }  from './auth-guard.service'
 
 const routes: Routes = [
   { path: 'index', component: AppComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-    { path: 'favStocks', component: StocksgridComponent },
+    { path: 'favStocks', component: StocksgridComponent ,canActivate: [AuthGuardService] },
    { path: 'stocks', component: StocksgridComponent },
-   { path: 'allstocks', component: AllstocksComponent },
+   { path: 'allstocks', component: AppComponent },
 
 ];
 

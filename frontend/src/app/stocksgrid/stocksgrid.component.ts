@@ -37,4 +37,9 @@ export class StocksgridComponent implements OnInit {
   getNotificationsapi() {
     return this._http.get<any>('./favStocksInfo/moham');
   }
+  getBooks()
+  {
+    return this._http
+      .post("./logindata/","5") // POST request with argument
+  }
 }

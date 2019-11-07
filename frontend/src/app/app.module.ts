@@ -15,8 +15,9 @@ import { OverlayModule} from '@angular/cdk/overlay';
 import {LoginComponent} from "./user/login/login.component";
 import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
 import { AllstocksComponent } from './allstocks/allstocks.component';
-
-
+import { AuthGuardService }  from './auth-guard.service'
+import { MyService } from './navigating-holder'
+import { NavComponent } from './nav/nav.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,9 @@ import { AllstocksComponent } from './allstocks/allstocks.component';
   providers: [
     UserService,
     UserStoreService,
+    AuthGuardService,
+    MyService,
+    NavComponent,
   ],
   bootstrap: [AppComponent]
 })

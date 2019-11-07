@@ -2,6 +2,8 @@ import pickle
 import sqlite3
 
 from django.shortcuts import render, redirect
+from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import csrf_protect, requires_csrf_token, csrf_exempt
 from rest_framework import viewsets, status
 import json
 
@@ -9,9 +11,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from myapp import stock_api
-from myapp.models import Stock, FavoriteStocks, Notifications, NotificationType
-from django.http import JsonResponse
-from django.contrib.auth.models import User
+from myapp.models import Stock, FavoriteStocks, Notifications, NotificationType , User
+from django.http import JsonResponse, HttpResponseBadRequest
+# from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.utils import timezone
 #from myapp.serializers import FavoriteStocksSerializerpi
@@ -59,6 +61,23 @@ def register(request):
 		return render(request, 'register.html', {'page_title': 'Register'})
 
 
+@csrf_exempt
+def registerData(request):
+    msg = "user name allready in use"
+    data = json.loads(request.body)
+    users = User.objects.values('username', 'password')
+    for i in users:
+         if i['username'] == data['username']:
+             return JsonResponse(msg, safe=False)
+
+	#newuser = User.objects.create_user(username=data['username'],password=data['password'],email="test")
+    newuser =User()
+    newuser.username= data['username']
+    newuser.password= data['password']
+    newuser.save()
+
+    return JsonResponse("you are registired successfully", safe=False)
+
 def logout_view(request):
 	logout(request)
 	return redirect('index')
@@ -84,7 +103,22 @@ def getFavoriteStocksInfo(request,username):
 	return JsonResponse( data,safe=False)
 
 
+# @cache_page(60 * 15)
+# @csrf_protect
+#@requires_csrf_token
+@csrf_exempt
+def logindata(request):
+ msg="user name or password is uncorrect"
+ data=json.loads(request.body)
+ users=User.objects.values('username','password')
+ for i in users:
+  if i['username'] == data['username']:
+	  if i['password'] == data['password']:
+		  print("d")
+		  msg="logged in successfully"
 
+ return JsonResponse(msg,safe=False)
+ #return  HttpResponseBadRequest
 def get_string_stocks(username):
     stocks_str =""
     stocks = FavoriteStocks.objects.filter(username=username).values('username', 'stock')
