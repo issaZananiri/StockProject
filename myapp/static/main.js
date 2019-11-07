@@ -23,6 +23,19 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/allstocks/allstocks.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/allstocks/allstocks.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>allstocks works!</p>\n<ag-grid-angular class=\"ag-theme-balham \" style=\"height:300px; width: 800px;\" [rowData]=\"newData\" [columnDefs]=\"columnDefs\">!--\n</ag-grid-angular>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -45,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div [class.alternative]=\"otherTheme\">\r\n    <mat-toolbar color=\"primary\">\r\n        <button mat-button id=\"title\">\r\n           Rail's Stocks💰</button>\r\n        <!-- This fills the remaining space of the current row -->\r\n        <span class=\"fill-remaining-space\"></span>\r\n        <div fxLayout=\"row\" fxShow=\"false\" fxShow.gt-sm id=\"try\">\r\n            <button class=\"con\" mat-button> Home</button>\r\n            <button class=\"con\" mat-button>Exchange System</button>\r\n            <button class=\"con\" mat-button>Contact</button>\r\n            <button class=\"con\" mat-button>Register</button>\r\n            <button class=\"con\" mat-button>Login</button>\r\n        </div>\r\n\r\n        <div class=\"theme\">\r\n            <button mat-fab (click)=\"onSetTheme('dark-theme')\" color=\"accent\">Dark</button>\r\n            <button mat-fab id=\"only\" (click)=\"onSetTheme('light-theme')\" color=\"warn\">Light</button>\r\n        </div>\r\n\r\n        <form class=\"form-inline my-2 my-lg-0\" id=\"se\">\r\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n        </form>\r\n\r\n        <button mat-button [mat-menu-trigger-for]=\"menu\" fxHide=\"false\" fxHide.gt-sm>\r\n        <mat-icon>menu</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-menu x-position=\"before\" #menu=\"matMenu\">\r\n        <button mat-menu-item>Home</button>\r\n        <button mat-menu-item>Exchange System</button>\r\n        <button mat-menu-item>Contact</button>\r\n        <button mat-menu-item>Register</button>\r\n        <button mat-menu-item>Login</button>\r\n        <!--<button mat-menu-item>Help</button>-->\r\n    </mat-menu>\r\n\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div [class.alternative]=\"otherTheme\">\r\n    <mat-toolbar color=\"primary\">\r\n        <button mat-button id=\"title\">\r\n           Rail's Stocks💰</button>\r\n        <!-- This fills the remaining space of the current row -->\r\n        <span class=\"fill-remaining-space\"></span>\r\n        <div fxLayout=\"row\" fxShow=\"false\" fxShow.gt-sm id=\"try\">\r\n            <button class=\"con\" routerLink=\"/favStocks\" mat-button> Home</button>\r\n            <button class=\"con\" routerLink=\"/allstocks\" mat-button>Exchange System</button>\r\n            <button class=\"con\" mat-button>Contact</button>\r\n            <button class=\"con\" routerLink=\"/register\" mat-button>Register</button>\r\n            <button class=\"con\" routerLink=\"/login\" mat-button *ngIf=\"!show\">Login</button>\r\n\r\n        </div>\r\n\r\n        <div class=\"theme\">\r\n            <button mat-fab (click)=\"onSetTheme('dark-theme')\" color=\"accent\">Dark</button>\r\n            <button mat-fab id=\"only\" (click)=\"onSetTheme('light-theme')\" color=\"warn\">Light</button>\r\n        </div>\r\n\r\n        <form class=\"form-inline my-2 my-lg-0\" id=\"se\">\r\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n        </form>\r\n\r\n        <button mat-button [mat-menu-trigger-for]=\"menu\" fxHide=\"false\" fxHide.gt-sm>\r\n        <mat-icon>menu</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-menu x-position=\"before\" #menu=\"matMenu\">\r\n        <button mat-menu-item>Home</button>\r\n        <button mat-menu-item>Exchange System</button>\r\n        <button mat-menu-item>Contact</button>\r\n        <button mat-menu-item>Register</button>\r\n        <button mat-menu-item>Login</button>\r\n        <!--<button mat-menu-item>Help</button>-->\r\n    </mat-menu>\r\n\r\n</div>");
 
 /***/ }),
 
@@ -317,6 +330,86 @@ function __importDefault(mod) {
 
 /***/ }),
 
+/***/ "./src/app/allstocks/allstocks.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/allstocks/allstocks.component.scss ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsbHN0b2Nrcy9hbGxzdG9ja3MuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/allstocks/allstocks.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/allstocks/allstocks.component.ts ***!
+  \**************************************************/
+/*! exports provided: AllstocksComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllstocksComponent", function() { return AllstocksComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let AllstocksComponent = class AllstocksComponent {
+    constructor(_http) {
+        this._http = _http;
+        this.newData = [{ symbol: 'yeasets', companyName: 'testit', change: 1.3, latestPrice: 123 }];
+        this.columnDefs = [
+            { headerName: 'stock', field: 'symbol', sortable: true, filter: true },
+            { headerName: 'companyName', field: 'companyName', sortable: true, filter: true },
+            { headerName: 'Price', field: 'latestPrice', sortable: true, filter: true },
+            { headerName: 'Change', field: 'change', sortable: true, filter: true }
+        ];
+        this.getNotifications = () => {
+            this.getNotificationsapi().subscribe(data => {
+                this.newData = data;
+            });
+            // this.api.getNotificationsapi.subscribe(data => {
+            //   this.newData = data;
+            // });
+            // this.api.getNotificationsapi().subscribe(data => {
+            //   this.newData = data;
+            // },
+            // error =>{
+            //   console.log(error)
+            // }
+            // );
+        };
+        this.getNotifications();
+    }
+    // constructor(private api: ApiService) {
+    //   this.getNotifications()
+    // }
+    ngOnInit() {
+    }
+    getNotificationsapi() {
+        return this._http.get('./top20stocks');
+    }
+};
+AllstocksComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+AllstocksComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-allstocks',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./allstocks.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/allstocks/allstocks.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./allstocks.component.scss */ "./src/app/allstocks/allstocks.component.scss")).default]
+    })
+], AllstocksComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -336,6 +429,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./stocksgrid/stocksgrid.component */ "./src/app/stocksgrid/stocksgrid.component.ts");
+/* harmony import */ var _allstocks_allstocks_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./allstocks/allstocks.component */ "./src/app/allstocks/allstocks.component.ts");
+/* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/auth-guard.service.ts");
+
+
 
 
 
@@ -348,8 +445,9 @@ const routes = [
     { path: 'index', component: _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"] },
     { path: 'login', component: _user_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] },
     { path: 'register', component: _user_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"] },
-    { path: 'favStocks', component: _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_7__["StocksgridComponent"] },
+    { path: 'favStocks', component: _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_7__["StocksgridComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_9__["AuthGuardService"]] },
     { path: 'stocks', component: _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_7__["StocksgridComponent"] },
+    { path: 'allstocks', component: _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"] },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -360,7 +458,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], AppRoutingModule);
 
-const routingComponents = [_user_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"], _user_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_5__["NavComponent"], _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_7__["StocksgridComponent"]];
+const routingComponents = [_user_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"], _user_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"], _nav_nav_component__WEBPACK_IMPORTED_MODULE_5__["NavComponent"], _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_7__["StocksgridComponent"], _allstocks_allstocks_component__WEBPACK_IMPORTED_MODULE_8__["AllstocksComponent"]];
 
 
 /***/ }),
@@ -390,13 +488,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/auth-guard.service.ts");
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(authGuardService) {
+        this.authGuardService = authGuardService;
         this.title = 'app';
+        this.show = this.authGuardService.isLoggedIn;
     }
 };
+AppComponent.ctorParameters = () => [
+    { type: _auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -436,6 +541,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm2015/flex-layout.js");
 /* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm2015/overlay.js");
 /* harmony import */ var _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./stocksgrid/stocksgrid.component */ "./src/app/stocksgrid/stocksgrid.component.ts");
+/* harmony import */ var _allstocks_allstocks_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./allstocks/allstocks.component */ "./src/app/allstocks/allstocks.component.ts");
+/* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth-guard.service */ "./src/app/auth-guard.service.ts");
+/* harmony import */ var _navigating_holder__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./navigating-holder */ "./src/app/navigating-holder.ts");
+/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
+
+
+
+
 
 
 
@@ -460,6 +573,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["routingComponents"],
             _stocksgrid_stocksgrid_component__WEBPACK_IMPORTED_MODULE_15__["StocksgridComponent"],
+            _allstocks_allstocks_component__WEBPACK_IMPORTED_MODULE_16__["AllstocksComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -476,10 +590,58 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providers: [
             _services_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"],
             _services_user_store_service__WEBPACK_IMPORTED_MODULE_10__["UserStoreService"],
+            _auth_guard_service__WEBPACK_IMPORTED_MODULE_17__["AuthGuardService"],
+            _navigating_holder__WEBPACK_IMPORTED_MODULE_18__["MyService"],
+            _nav_nav_component__WEBPACK_IMPORTED_MODULE_19__["NavComponent"],
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/auth-guard.service.ts":
+/*!***************************************!*\
+  !*** ./src/app/auth-guard.service.ts ***!
+  \***************************************/
+/*! exports provided: AuthGuardService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuardService", function() { return AuthGuardService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+let AuthGuardService = class AuthGuardService {
+    constructor(router) {
+        this.router = router;
+        // you would usually put this in it's own service and not access it directly!
+        // this is just for the sake of the demo.
+        this.isLoggedIn = false;
+    }
+    canActivate(route, state) {
+        if (this.isLoggedIn) {
+            return true;
+        }
+        else {
+            alert('Please log in');
+            this.router.navigate(['']);
+            return false;
+        }
+    }
+};
+AuthGuardService.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AuthGuardService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], AuthGuardService);
 
 
 
@@ -550,22 +712,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm2015/overlay.js");
+/* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .././auth-guard.service */ "./src/app/auth-guard.service.ts");
+/* harmony import */ var _navigating_holder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../navigating-holder */ "./src/app/navigating-holder.ts");
+
+
 
 
 
 let NavComponent = class NavComponent {
-    constructor(overlayContainer) {
+    constructor(authGuardService, overlayContainer, myService) {
+        this.authGuardService = authGuardService;
         this.overlayContainer = overlayContainer;
+        this.myService = myService;
+        this.show = false;
     }
     onSetTheme(theme) {
         this.overlayContainer.getContainerElement().classList.add(theme);
         this.componentCssClass = theme;
     }
     ngOnInit() {
+        this.show = this.myService.temp;
+    }
+    changShow() {
+        // this.ref.
     }
 };
 NavComponent.ctorParameters = () => [
-    { type: _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__["OverlayContainer"] }
+    { type: _auth_guard_service__WEBPACK_IMPORTED_MODULE_3__["AuthGuardService"] },
+    { type: _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__["OverlayContainer"] },
+    { type: _navigating_holder__WEBPACK_IMPORTED_MODULE_4__["MyService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('class')
@@ -575,8 +750,46 @@ NavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-nav',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./nav.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/nav/nav.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./nav.component.scss */ "./src/app/nav/nav.component.scss")).default]
-    })
+    }),
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
 ], NavComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/navigating-holder.ts":
+/*!**************************************!*\
+  !*** ./src/app/navigating-holder.ts ***!
+  \**************************************/
+/*! exports provided: MyService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyService", function() { return MyService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+let MyService = class MyService {
+    constructor() {
+        this.dataMessenger = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.temp = false;
+    }
+    getData() {
+        return this.dataMessenger;
+    }
+    setData(newData) {
+        this.dataMessenger.next(newData);
+        this.temp = true;
+    }
+};
+MyService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], MyService);
 
 
 
@@ -644,16 +857,19 @@ let UserService = class UserService {
         this.userStore = userStore;
     }
     login(username, password) {
-        return this.http.post('/api/user/login', {
+        // return this.http.post('./logindata/',8
+        // );
+        return this.http.post('./logindata/', {
             username: username,
             password: password
         }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((resp) => {
             this.userStore.token = resp.token;
+            //console.log(resp)
             return resp;
         }));
     }
     register(username, password) {
-        return this.http.post('/api/user/register', {
+        return this.http.post('/registerdata/', {
             username: username,
             password: password
         });
@@ -724,6 +940,10 @@ let StocksgridComponent = class StocksgridComponent {
     getNotificationsapi() {
         return this._http.get('./favStocksInfo/moham');
     }
+    getBooks() {
+        return this._http
+            .post("./logindata/", "5"); // POST request with argument
+    }
 };
 StocksgridComponent.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -767,14 +987,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _auth_guard_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../auth-guard.service */ "./src/app/auth-guard.service.ts");
+/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../nav/nav.component */ "./src/app/nav/nav.component.ts");
+/* harmony import */ var _navigating_holder__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../navigating-holder */ "./src/app/navigating-holder.ts");
+
+
+
 
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(userService, router) {
+    // @Input() public nav: NavComponent;
+    constructor(userService, myService, navi, router, authGuardService) {
         this.userService = userService;
+        this.myService = myService;
+        this.navi = navi;
         this.router = router;
+        this.authGuardService = authGuardService;
         this.username = '';
         this.password = '';
         this.message = '';
@@ -782,11 +1012,24 @@ let LoginComponent = class LoginComponent {
     login() {
         this.userService.login(this.username, this.password)
             .subscribe((resp) => {
-            console.log('Successfully logged in');
-            this.message = resp.msg;
-            this.router.navigate(['stock', 'list'], {
-                queryParams: { page: 1 }
-            });
+            this.message = resp;
+            console.log(this.message);
+            if (this.message == "logged in successfully") {
+                this.authGuardService.isLoggedIn = true;
+                console.log("yeayea");
+                this.router.navigateByUrl('favStocks');
+                console.log(this.myService.temp);
+                this.myService.setData(true);
+                console.log(this.myService.temp);
+                console.log(this.navi.show);
+                //this.navi.show=true;
+                this.navi.ngOnInit();
+                this.navi.changShow();
+                console.log(this.navi.show);
+            }
+            // this.router.navigate(['stock', 'list'], {
+            //   queryParams: {page: 1}
+            // });
         }, (err) => {
             console.error('Error logging in', err);
             this.message = err.error.msg;
@@ -795,8 +1038,14 @@ let LoginComponent = class LoginComponent {
 };
 LoginComponent.ctorParameters = () => [
     { type: _services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _navigating_holder__WEBPACK_IMPORTED_MODULE_6__["MyService"] },
+    { type: _nav_nav_component__WEBPACK_IMPORTED_MODULE_5__["NavComponent"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _auth_guard_service__WEBPACK_IMPORTED_MODULE_4__["AuthGuardService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_nav_nav_component__WEBPACK_IMPORTED_MODULE_5__["NavComponent"], { static: false })
+], LoginComponent.prototype, "nav", void 0);
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-login',
@@ -851,9 +1100,11 @@ let RegisterComponent = class RegisterComponent {
     register() {
         this.userService.register(this.username, this.password)
             .subscribe((resp) => {
-            console.log('Successfully registered');
-            this.message = resp.msg;
-            this.router.navigate(['login']);
+            this.message = resp;
+            console.log(this.message);
+            if (this.message == "you are registired successfully") {
+                this.router.navigateByUrl('login');
+            }
         }, (err) => {
             console.error('Error registering', err);
             this.message = err.error.msg;
