@@ -12,8 +12,8 @@
         <div fxShow="true" fxHide.lt-md="true">
             <a mat-button>Exchange System</a>
             <a mat-button>Contact</a>
-            <a mat-button>Register</a>
-            <a mat-button>Login</a>
+            <a mat-button [routerLink]="['/register']">Register</a>
+            <a mat-button [routerLink]="['/login']">Login</a>
             <a mat-raised-button (click)="changeTheme()">Switch</a>
 
         </div>
@@ -23,16 +23,14 @@
             <div fxLayout="column">
                 <a mat-button>Exchange System</a>
                 <a mat-button>Contact</a>
-                <a mat-button>Register</a>
-                <a mat-button>Login</a>
+                <a mat-button [routerLink]="['/register']">Register</a>
+                <a mat-button [routerLink]="['/login']">Login</a>
                 <a mat-button (click)="changeTheme()">Switch</a>
 
             </div>
         </mat-sidenav>
     </div>
 </div>
-
-
 
 
 

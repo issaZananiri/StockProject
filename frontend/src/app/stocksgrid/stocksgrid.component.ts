@@ -10,10 +10,9 @@ export class StocksgridComponent implements OnInit {
   
   newData =[{symbol: 'test', change: 1.3, latestPrice:123}];
   rowIndex = (params) => params.node.rowIndex + 1
-
+  
   columnDefs = [
     { headerName: 'stock', field: 'symbol', sortable: true, filter: true },
-    //{ headerName: 'username', field: 'username', sortable: true, filter: true },
     { headerName: 'Price', field: 'latestPrice', sortable: true, filter: true },
     { headerName: 'Change', field: 'change', sortable: true, filter: true }
   ];
@@ -22,10 +21,7 @@ export class StocksgridComponent implements OnInit {
     this.getNotifications()
   }
 
-  ngOnInit() {
-  }
-
-
+  ngOnInit() {}
 
 
   getNotifications = () =>{

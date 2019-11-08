@@ -4,12 +4,10 @@
     $custom-typography: mat-typography-config( $font-family: Raleway, $headline: mat-typography-level(24px, 48px, 400), $body-1: mat-typography-level(16px, 24px, 400));
     @include angular-material-typography($custom-typography);
     @mixin global-theme($theme) {
-        & {
-            $background: map-get($theme, background);
-            $foreground: map-get($theme, foreground);
-            background-color: mat-color($background, background);
-            color: mat-color($foreground, text);
-        }
+        $background: map-get($theme, background);
+        $foreground: map-get($theme, foreground);
+        background-color: mat-color($background, background);
+        color: mat-color($foreground, text);
     }
     
     // Default colors
@@ -25,30 +23,17 @@
     .dark-theme {
         @include angular-material-theme($dark-theme);
         @include global-theme($dark-theme);
-        body {
-            background-color: blueviolet;
-        }
         .ag-theme-balham .ag-header {
-            background-color: #000000e8;
-            color: rgb(112, 149, 182);
+            background-color: #6d706ee8;
+            color: rgb(7, 11, 15);
             font-weight: bolder;
             font-size: 19px;
             font-family: "Helvetica Neue", sans-serif;
             border-bottom: 0px solid #BDC3C7;
-            margin-top: 30px;
         }
-    }
-    
-    // Light theme
-    $default-primary: mat-palette($mat-blue, 50, 100, 200);
-    $dafault-accent: mat-palette($mat-purple, 50, 100, 200);
-    $dafault-warn: mat-palette($mat-deep-orange, 200);
-    $dafault-theme: mat-light-theme($dafault-primary, $dafault-accent, $dafault-warn);
-    .dafault-theme {
-        @include angular-material-theme($dafault-theme);
-        @include global-theme($dafault-theme);
-        body {
-            background-color: blanchedalmond;
+        .ag-center-cols-viewport {
+            height: calc(100% + 0px);
+            background-color: #dbdbca79;
         }
     }
     /**

@@ -1,31 +1,22 @@
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 @import "theme.scss";
-.grid1 {
-    margin-top: 20px;
-    margin-left: 300px;
-}
-
 .ag-theme-balham .ag-header {
-    background-color: #f8f9fa;
-    color: rgb(150, 176, 199);
-    font-weight: 600;
+    background-color: #bbb7abe8;
+    color: rgb(59, 61, 63);
+    font-weight: bolder;
     font-size: 19px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     border-bottom: 0px solid #BDC3C7;
+    text-align: center;
 }
 
 .ag-center-cols-viewport {
     height: calc(100% + 0px);
-    background-color: #f8f9fa;
+    background-color: #dbdbca79;
 }
 
 body {
-    background-color: #ccc9be;
+    background-color: #ccc9c0;
     height: 100%;
-}
-
-.ag-grid-angular {
-    margin-top: 20px;
-    margin-left: 300px;
 }
