@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatRippleModule } from '@angular/material';
 import { MatButtonModule, MatInputModule, MatSliderModule, MatIconModule, MatTableModule,MatToolbarModule, MatDividerModule, 
-  MatMenuModule,MatSidenavModule,MatListModule} from '@angular/material';
+  MatMenuModule,MatSidenavModule,MatListModule, MatCardModule, MatProgressSpinnerModule} from '@angular/material';
 
 const MaterialsComponents =[
   MatSliderModule,
@@ -15,6 +15,8 @@ const MaterialsComponents =[
   MatSidenavModule,
   MatListModule,
   MatRippleModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
 ]
 
 @NgModule({

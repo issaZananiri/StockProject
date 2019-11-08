@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -18,7 +20,7 @@ export class NavComponent implements OnInit {
     }
 
   }
-  constructor() {}
+  constructor(private router: Router) {}
   ngOnInit() {
   }
 }

@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
 
   public username: string = '';
+  public email: string = '';
   public password: string = '';
+
 
   public message: string = '';
   constructor(private userService: UserService,
