@@ -12,20 +12,24 @@ export class UserService {
   constructor(private http: HttpClient, private userStore: UserStoreService) {}
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post('/api/user/login', {
+    // return this.http.post('./logindata/',8
+    // );
+    return this.http.post('./logindata/', {
       username: username,
       password: password
-    }).pipe(map((resp: any) => {
+    }).pipe(map((resp: any) => { 
       this.userStore.token = resp.token;
+      //console.log(resp)
       return resp;
     }));
   }
 
   register(username: string, password: string): Observable<any> {
-    return this.http.post('/api/user/register', {
+    return this.http.post('/registerdata/', {
       username: username,
       password: password
     });
+    
   }
 
 

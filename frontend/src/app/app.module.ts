@@ -12,14 +12,18 @@ import { MaterialsModule } from './materials/materials.module';
 import { AgGridModule } from 'ag-grid-angular';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { OverlayModule} from '@angular/cdk/overlay';
+import {LoginComponent} from "./user/login/login.component";
 import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
-
-
+import { AllstocksComponent } from './allstocks/allstocks.component';
+import { AuthGuardService }  from './auth-guard.service'
+import { MyService } from './navigating-holder'
+import { NavComponent } from './nav/nav.component'
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    StocksgridComponent, 
+    StocksgridComponent,
+    AllstocksComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,17 +33,20 @@ import { StocksgridComponent } from './stocksgrid/stocksgrid.component';
     AppRoutingModule,
     RouterModule,
     MaterialsModule,
-    AgGridModule.withComponents([]), 
+    AgGridModule.withComponents([]),
     OverlayModule,
     FlexLayoutModule,
-    
+
   ],
   providers: [
     UserService,
     UserStoreService,
+    AuthGuardService,
+    MyService,
+    NavComponent,
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 }

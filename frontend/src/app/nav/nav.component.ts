@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-
+import { Component, OnInit, HostBinding, Input, Injectable ,ChangeDetectorRef} from '@angular/core';
+import { OverlayContainer} from '@angular/cdk/overlay';
+import { AuthGuardService }  from '.././auth-guard.service'
+import { MyService } from '../navigating-holder'
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
+@Injectable()
 export class NavComponent implements OnInit {
-  changeTheme(){
-    if(document.body.classList.contains("default-theme")){
-       document.body.classList.remove("default-theme");
-       document.body.classList.add("dark-theme");
-    }
-    else{
-      document.body.classList.remove("dark-theme");
-      document.body.classList.add("default-theme");
-    }
+  show = false;
+  private ref:ChangeDetectorRef;
+
+  constructor(private authGuardService: AuthGuardService,public overlayContainer: OverlayContainer,private myService: MyService) {}
+
+  @HostBinding('class') componentCssClass;
+
+  onSetTheme(theme) {
+    this.overlayContainer.getContainerElement().classList.add(theme);
+    this.componentCssClass = theme;
+  }
+  ngOnInit() {
+     this.show=this.myService.temp
 
   }
-  constructor(private router: Router) {}
-  ngOnInit() {
+  changShow(){
+    // this.ref.
   }
 }
