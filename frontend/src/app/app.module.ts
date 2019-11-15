@@ -18,12 +18,17 @@ import { AllstocksComponent } from './allstocks/allstocks.component';
 import { AuthGuardService }  from './auth-guard.service'
 import { MyService } from './navigating-holder'
 import { NavComponent } from './nav/nav.component'
+import { ButtonRendererComponent } from './allstocks/button-renderer.component';
+import { BuyStocksComponent } from './buy-stocks/buy-stocks.component'
+import { MyServiceStockInfo } from './services/stocks-info-buy'
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     StocksgridComponent,
     AllstocksComponent,
+    ButtonRendererComponent,
+    BuyStocksComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import { NavComponent } from './nav/nav.component'
     AppRoutingModule,
     RouterModule,
     MaterialsModule,
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([ButtonRendererComponent]),
     OverlayModule,
     FlexLayoutModule,
 
@@ -44,8 +49,14 @@ import { NavComponent } from './nav/nav.component'
     AuthGuardService,
     MyService,
     NavComponent,
+    ButtonRendererComponent,
+    MyServiceStockInfo,
+    
   ],
   bootstrap: [AppComponent]
+  ,entryComponents: [ButtonRendererComponent]
+  ,exports: [ ButtonRendererComponent ]
+
 })
 export class AppModule {
 
