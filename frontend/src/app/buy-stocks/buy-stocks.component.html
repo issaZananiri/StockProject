@@ -1,0 +1,47 @@
+<mat-card class="example-card" style="margin-left: 25%; margin-right: 25%; margin-top: 5%;">
+        <mat-card-header>
+            <mat-card-title>BUY STOCKS</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="example-form">
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <!-- <mat-form-field class="example-full-width"> -->
+                                    <label>Stock Symbol: {{stockSymbol}}</label>
+                                <!-- <input matInput placeholder="Stock Symbol"  name="username" disabled=true> -->
+                            <!-- </mat-form-field> -->
+                        </td>
+                        <td>
+                                <!-- <mat-form-field class="example-full-width"> -->
+                                        <label> stock price:{{price}} </label>
+                                    <!-- <input matInput placeholder="{{stockSymbol}}"  name="username" disabled=true> -->
+                                <!-- </mat-form-field> -->
+                            </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Number of stocks" [(ngModel)]="numStocks" type="number"  name="numStocks" required>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <label> total price:{{totalPrice}} </label>
+
+                            
+                            </td>
+                        </tr>
+                </table>
+            </form>
+            <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="calcPrice()" color="primary">Calculate Price</button>
+            <button mat-raised-button (click)="buy()" color="primary">BUY</button>
+
+            <!-- <a [routerLink]="['/register']" class="btn btn-link">BUY</a> -->
+    
+        </mat-card-actions>
+    </mat-card>
