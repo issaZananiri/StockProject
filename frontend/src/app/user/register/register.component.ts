@@ -19,6 +19,9 @@ export class RegisterComponent {
               private router: Router) { }
 
   register() {
+    if(this.username.length==0 || this.password.length==0 || this.email.length==0){
+      alert("INPUT IS EMPTY");
+    }else{
     this.userService.register(this.username, this.password)
       .subscribe((resp) => {
         this.message = resp;
@@ -30,5 +33,6 @@ export class RegisterComponent {
         console.error('Error registering', err);
         this.message = err.error.msg;
       });
+    }
   }
 }

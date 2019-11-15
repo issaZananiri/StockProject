@@ -16,6 +16,9 @@ class Stock(models.Model):
 class FavoriteStocks(models.Model):
 	username = models.CharField(max_length=300)
 	stock = models.CharField(max_length=10)
+	quantity = models.IntegerField(default=1)
+	pricePurchased = models.FloatField(default=1)
+
 
 	# def __init__(self, username,stock):
 	# 	self.stock=stock

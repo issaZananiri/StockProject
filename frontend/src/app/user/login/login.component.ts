@@ -22,6 +22,9 @@ export class LoginComponent {
               private router: Router,private authGuardService: AuthGuardService) { }
 
   login() {
+    if(this.username.length==0 || this.password.length==0){
+      alert("INPUT IS EMPTY");
+    }else{
     this.userService.login(this.username, this.password)
       .subscribe((resp) => {
         
@@ -29,17 +32,13 @@ export class LoginComponent {
         console.log(this.message);
         if(this.message == "logged in successfully"){
           this.authGuardService.isLoggedIn=true
-          console.log("yeayea");this.router.navigateByUrl('favStocks')
-          console.log(this.myService.temp)
-          this.myService.setData(true)
-          console.log(this.myService.temp)
-          
-          console.log(this.navi.show);
-          //this.navi.show=true;
-          this.navi.ngOnInit()
-          this.navi.changShow()
-          console.log(this.navi.show);
-
+          console.log("yeayea");
+          console.log(this.myService.tempchange);
+          this.myService.change();
+          console.log(this.myService.tempchange);
+          //this.navi.changShow();
+          this.router.navigateByUrl('favStocks');
+          this.myService.setUsername(this.username);
         }
         // this.router.navigate(['stock', 'list'], {
         //   queryParams: {page: 1}
@@ -47,6 +46,6 @@ export class LoginComponent {
       }, (err) => {
         console.error('Error logging in', err);
         this.message = err.error.msg;
-      });
+      });}
   }
 }

@@ -92,16 +92,45 @@ def single_stock_historic(request, symbol):
 
 
 def get_favorite_stocks(request ,username):
-	stocks = FavoriteStocks.objects.filter(username=username).values('username','stock')
-	print((stocks)[0]['stock'])
+	stocks = FavoriteStocks.objects.filter(username=username).values('username','stock','id','quantity','pricePurchased')
+	print((stocks)[0]['quantity'])
     # for i in range(len(list(stocks))):
     #     string += list(stocks)[i]['stock']
 	return JsonResponse( list(stocks),safe=False)
 
-def getFavoriteStocksInfo(request,username):
-	data = stock_api.get_stocks_for_favorite(get_string_stocks(username))
-	return JsonResponse( data,safe=False)
+def get_all_favorite_stocks(request ):
+	stocks = FavoriteStocks.objects.values('username','stock','id')
+	print((stocks)[0]['stock'])
+	data=list(stocks)
 
+    # for i in range(len(list(stocks))):
+    #     string += list(stocks)[i]['stock']
+	return JsonResponse( data,safe=False)
+def getFavoriteStocksInfo(request,username):
+    data = stock_api.get_stocks_for_favorite(get_string_stocks(username))
+    stocks = FavoriteStocks.objects.filter(username=username).values('username', 'stock', 'id', 'quantity','pricePurchased')
+    data1=list(stocks)
+    for i in range(len(data)):
+        data[i]['quantity']=data1[i]['quantity']
+        data[i]['pricePurchased'] = data1[i]['pricePurchased']
+        data[i]['quantity'] = data1[i]['quantity']
+        data[i]['id'] = data1[i]['id']
+
+    return JsonResponse( data,safe=False)
+@csrf_exempt
+def buyStocks(request):
+    print("111")
+    data = json.loads(request.body)
+    print(data['numStocks'])
+    print(data['stockSymbol'])
+    print(data['price'])
+    newfav=FavoriteStocks()
+    newfav.username=data['username']
+    newfav.stock=data['stockSymbol']
+    newfav.pricePurchased=data['price']
+    newfav.quantity=data['numStocks']
+    newfav.save()
+    return JsonResponse(data,safe=False)
 
 # @cache_page(60 * 15)
 # @csrf_protect
@@ -121,7 +150,7 @@ def logindata(request):
  #return  HttpResponseBadRequest
 def get_string_stocks(username):
     stocks_str =""
-    stocks = FavoriteStocks.objects.filter(username=username).values('username', 'stock')
+    stocks = FavoriteStocks.objects.filter(username=username).values('username', 'stock','id','quantity','pricePurchased')
     for i in range(len(list(stocks))):
         stocks_str += list(stocks)[i]['stock']
         if i != len(list(stocks)) - 1:
