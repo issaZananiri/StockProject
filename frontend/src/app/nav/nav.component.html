@@ -1,43 +1,37 @@
-<div [class.alternative]="otherTheme">
-    <mat-toolbar color="primary">
-        <button mat-button id="title">
-           Rail's Stocks💰</button>
-        <!-- This fills the remaining space of the current row -->
-        <span class="fill-remaining-space"></span>
-        <div fxLayout="row" fxShow="false" fxShow.gt-sm id="try">
-            <button class="con" routerLink="/favStocks" mat-button (click)="hideCon()"> Home</button>
-            <button class="con" routerLink="/allstocks" mat-button>Exchange System</button>
-            <button class="con" routerLink="" mat-button >Contact</button>
-            <div *ngIf="show">
-                <button class="con" routerLink="/register" mat-button>Register</button>
-                <button class="con" routerLink="/login" mat-button >Login</button>
-            </div>
-            <button class="con" (click)="signout()" mat-button *ngIf="!show" >logout</button>
-
+<div style="height: fit-content;" class="default-theme">
+    <mat-toolbar class="navbar is-light" class="default-theme">
+        <div fxShow="true" fxHide.gt-sm="true">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>&#9776;</mat-icon>
+            </button>
+        </div>
+        <a mat-button class="companyName" routerLink="/">
+            <span>Rail's Stocks💰</span>
+            <!--  <img class="logo" src="../../assets/img/logo.png" alt="tassii" />-->
+        </a>
+        <span class=" example-spacer "></span>
+        <div fxShow="true " fxHide.lt-md="true ">
+            <a mat-button class="con" routerLink="/allstocks">Exchange System</a>
+            <a mat-button>Contact</a>
+            <a mat-button class="con" *ngIf="show" routerLink='/register'>Register</a>
+            <a mat-button *ngIf="show" routerLink='/login'>Login</a>
+            <a mat-button *ngIf="!show" class="con" mat-button>My Account</a>
+            <a mat-button *ngIf="!show" class="con" mat-button (click)="signout()">Logout</a>
+            <mat-slide-toggle (click)="changeTheme() "></mat-slide-toggle>
 
         </div>
-
-        <div class="theme">
-            <button mat-fab (click)="onSetTheme('dark-theme')" color="accent">Dark</button>
-            <button mat-fab id="only" (click)="onSetTheme('light-theme')" color="warn">Light</button>
-        </div>
-
-        <form class="form-inline my-2 my-lg-0" id="se">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-        <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-        <mat-icon>menu</mat-icon>
-        </button>
     </mat-toolbar>
-    <mat-menu x-position="before" #menu="matMenu">
-        <button mat-menu-item>Home</button>
-        <button mat-menu-item>Exchange System</button>
-        <button mat-menu-item>Contact</button>
-        <button mat-menu-item>Register</button>
-        <button mat-menu-item>Login</button>
-        <!--<button mat-menu-item>Help</button>-->
-    </mat-menu>
-
+    <div fxFlexFill class="example-container ">
+        <mat-sidenav color="primary " #sidenav fxLayout="column " mode="over " opened="false " fxHide.gt-sm="true " style="height: fit-content; ">
+            <div fxLayout="column ">
+                <a mat-button class="con" routerLink="/allstocks">Exchange System</a>
+                <a mat-button>Contact</a>
+                <a mat-button class="con" *ngIf="show" routerLink='/register'>Register</a>
+                <a mat-button class="con" *ngIf="show" routerLink='/login'>Login</a>
+                <a mat-button *ngIf="!show">My Account</a>
+                <a mat-button class="con" *ngIf="!show" (click)="signout()">Logout</a>
+                <a mat-button (click)="changeTheme() ">Switch</a>
+            </div>
+        </mat-sidenav>
+    </div>
 </div>
