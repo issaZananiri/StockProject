@@ -1,8 +1,8 @@
-import { Component, OnInit, HostBinding, Input, Injectable ,ApplicationRef, ComponentRef,ViewChild, ViewContainerRef, TemplateRef  } from '@angular/core';
-import { OverlayContainer} from '@angular/cdk/overlay';
-import { AuthGuardService }  from '.././auth-guard.service'
+import { Component, OnInit, HostBinding, Input, Injectable, ApplicationRef, ComponentRef, ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { AuthGuardService } from '../services/auth-guard.service'
 import { MyService } from '../navigating-holder'
-import { Subject,interval } from 'rxjs';
+import { Subject, interval } from 'rxjs';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav',
@@ -10,28 +10,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 @Injectable()
-export class NavComponent implements OnInit  {
- 
- 
+export class NavComponent implements OnInit {
+
+
   show = this.myService.temp;
   show1 = true;
-   source = interval(10000);
-   comRef:ComponentRef<NavComponent> ;
+  source = interval(10000);
+  comRef: ComponentRef<NavComponent>;
   _subscription: any;
 
-   
-  constructor(private router: Router,private appRef: ApplicationRef,private authGuardService: AuthGuardService,public overlayContainer: OverlayContainer,private myService: MyService) {
-    this._subscription = myService.tempchange.subscribe((value) => { 
-      this.show = value; 
+
+  constructor(private router: Router, private appRef: ApplicationRef, private authGuardService: AuthGuardService, public overlayContainer: OverlayContainer, private myService: MyService) {
+    this._subscription = myService.tempchange.subscribe((value) => {
+      this.show = value;
     });
   }
 
   @HostBinding('class') componentCssClass;
 
-  onSetTheme(theme) {
-    // this.show=this.myService.temp
-    this.overlayContainer.getContainerElement().classList.add(theme);
-    this.componentCssClass = theme;
+  changeTheme() {
+    if (document.body.classList.contains("default-theme")) {
+      document.body.classList.remove("default-theme");
+      document.body.classList.add("dark-theme");
+    }
+    else {
+      document.body.classList.remove("dark-theme");
+      document.body.classList.add("default-theme");
+    }
   }
   ngOnInit() {
     // this.show = this.myService.temp;
@@ -39,12 +44,12 @@ export class NavComponent implements OnInit  {
     console.log(this.myService.temp);
 
   }
- 
 
-  changShow(){
+
+  changShow() {
     // this.ref.
-    this.show=this.myService.temp;
-    console.log("yeee"+this.show);
+    this.show = this.myService.temp;
+    console.log("yeee" + this.show);
     console.log(this.myService.temp);
 
     //setTimeout(this.appRef.tick, 1000);
@@ -53,19 +58,19 @@ export class NavComponent implements OnInit  {
       this.chechTimer();
 
     }, 10000);
-    
+
   }
-  chechTimer(){
+  chechTimer() {
     this.appRef.tick();
     console.log("yup nigga");
   }
-  hideCon(){
-    this.show1=!this.show1;
+  hideCon() {
+    this.show1 = !this.show1;
   }
-  signout(){
+  signout() {
     console.log(this.authGuardService.isLoggedIn);
     this.myService.change();
-    this.authGuardService.isLoggedIn=false;
+    this.authGuardService.isLoggedIn = false;
     console.log(this.authGuardService.isLoggedIn);
     this.router.navigateByUrl('login')
 

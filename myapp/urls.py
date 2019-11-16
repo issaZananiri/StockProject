@@ -21,6 +21,7 @@ urlpatterns = [
 	url(r'^favStocks/$', views.index, name='ui'),
 	url(r'^buystocks/$', views.index, name='ui'),
 	url(r'^allstocks/$', views.index, name='ui'),
+ 	url(r'^register/$', views.index, name='ui'),
 	url(r'^logindata/$', views.logindata, name='logindata'),
 	url(r'^registerdata/$', views.registerData, name='registerdata'),
 	url(r'^buystock/$', views.buyStocks, name='buyStocks'),
